@@ -1,2 +1,3 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+### Exercícios de Dart
+
+Esses são alguns exercícios na linguagem _Dart_, adaptados dos exercícios de _Python_ do meu repositório https://github.com/dioScar90/UniversityPython.
