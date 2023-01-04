@@ -11,22 +11,23 @@ class EditarNomes {
 		final prepositions = [ 'di', 'da', 'das', 'do', 'dos', 'de', 'e', 'von', 'van', 'le', 'la', 'du', 'des', 'del', 'della', 'der' ];
 		final vowels = [ 'a', 'e', 'i', 'o', 'u' ];
 		
-		for (final item in arrStr) {
-			if (prepositions.contains(item.toLowerCase())) {
-				newStr += item.toLowerCase();
+		for (String item in arrStr) {
+			item = item.toLowerCase();
+			if (prepositions.contains(item)) {
+				newStr += item;
 			}
 			else {
-				if (item.substring(0, 2).toUpperCase() == 'O\'') {
+				if (item.substring(0, 2) == 'o\'') {
 					newStr += item.substring(0, 3).toUpperCase() + item.substring(3).toLowerCase();
 				}
-				else if (item.length > 3 && item.toLowerCase().startsWith('mc') && vowels.contains(item[3].toLowerCase())) {
+				else if (item.length > 3 && item.startsWith('mc') && vowels.contains(item[3])) {
 					newStr += item[0].toUpperCase() + item[1].toLowerCase() + item[2].toUpperCase() + item.substring(3).toLowerCase();
 				}
-				else if (item.length > 4 && item.toLowerCase().startsWith('mac') && vowels.contains(item[4].toLowerCase())) {
+				else if (item.length > 4 && item.startsWith('mac') && vowels.contains(item[4])) {
 					newStr += item[0].toUpperCase() + item.substring(1, 3).toLowerCase() + item[3].toUpperCase() + item.substring(4).toLowerCase();
 				}
 				else {
-				newStr += item[0].toUpperCase() + item.substring(1).toLowerCase();
+					newStr += item[0].toUpperCase() + item.substring(1).toLowerCase();
 				}
 			}
 
