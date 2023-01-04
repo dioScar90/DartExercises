@@ -1,9 +1,14 @@
-import '../lib/EditarNomes.dart' as editar;
+import 'package:my_dart/editar_nomes.dart' as editar;
 import 'dart:convert';
 import 'dart:io';
 
 void main() {
-	final exemples = [
+	stdout.write('Escreva um nome: ');
+	String? nome = stdin.readLineSync(encoding: utf8);
+	String newName = editar.EditarNomes.toUpperFirst(nome);
+	print('Nome escolhido: $newName.');
+
+	List<String> exemples = [
 		'   ZÉ NETO   e CRIstiANO',
 		' vincént VAN gogh',
 		' diogo dE lIMA SCARMAGNANI',
@@ -21,11 +26,8 @@ void main() {
 	print('\nOutros exemplos de nomes:');
 	int i = 0;
 	for (String exemple in exemples) {
+		String newName = editar.EditarNomes.toUpperFirst(exemple);
 		i++;
-		print("Nome $i: ${editar.EditarNomes.toUpperFirst(exemple)}.");
+		print("Nome $i: $newName.");
 	}
-
-	// stdout.write('Escreva um nome: ');
-	// String? nome = stdin.readLineSync(encoding: utf8);
-	// print('Nome escolhido: ${editar.EditarNomes.toUpperFirst(nome)}.');
 }
