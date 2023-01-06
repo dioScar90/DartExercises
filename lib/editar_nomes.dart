@@ -3,6 +3,10 @@ class EditarNomes {
 		if (fullName == null) {
 			return 'Nome inválido';
 		}
+
+    if (fullName.length < 3) {
+      return 'Nome muito curto';
+    }
 		
 		fullName = fullName.trim().replaceAll(RegExp(r'\s+'), ' ');
 		final namesList = fullName.split(' ');
